@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
   get 'users/:id' => 'application#show'
+  get 'new_user' => 'application#new'
+  get '/create_user' => 'application#create'
   
 #   get 'user_app/1' => 'application#first'
 #   get 'user_app/2' => 'application#second'

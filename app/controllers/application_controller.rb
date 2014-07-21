@@ -8,6 +8,18 @@ class ApplicationController < ActionController::Base
     render 'show'
   end
   
+  def new
+  end
+  
+  def create
+    u = User.new
+    u.image_url = params['image_url']
+    u.name = params['user_name']
+    u.bio = params['bio']
+    u.save
+    redirect_to "/users/#{ u.id } "  
+  end
+  
 end
   
 #   def show
