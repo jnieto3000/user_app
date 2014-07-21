@@ -20,6 +20,19 @@ class ApplicationController < ActionController::Base
     redirect_to "/users/#{ u.id } "  
   end
   
+  def edit
+    @user = User.find_by_id(params['id'])
+  end
+  
+  def update
+    u = User.find_by_id(params['id'])
+    u.image_url = params['image_url']
+    u.name = params['user_name']
+    u.bio = params['bio']
+    u.save
+    redirect_to "/users/#{ u.id } "  
+  end
+  
 end
   
 #   def show
