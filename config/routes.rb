@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   
-  get 'users/:id' => 'application#show'
-  get 'new_user' => 'application#new'
+  get '/users/:id' => 'application#show'
+  get '/new_user' => 'application#new'
   get '/create_user' => 'application#create'
   get '/users/:id/edit' => 'application#edit'
   get '/update_user/:id' => 'application#update'
+  get '/users/:id/destroy' => 'application#destroy'
   
 #   get 'user_app/1' => 'application#first'
 #   get 'user_app/2' => 'application#second'

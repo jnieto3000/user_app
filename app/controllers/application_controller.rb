@@ -33,6 +33,16 @@ class ApplicationController < ActionController::Base
     redirect_to "/users/#{ u.id } "  
   end
   
+  def destroy
+    u = User.find_by_id(params['id'])
+#     raise u.inspect
+    u.destroy
+    redirect_to "/new_user/", notice: 'message'
+#     redirect_to "/users/#{ u.id } "  
+  end
+  
+  
+  
 end
   
 #   def show
